@@ -1,0 +1,2 @@
+# IR flood LED (lm3643-ir): let members of the video group switch it (used by ir-bridge)
+ACTION=="add", SUBSYSTEM=="leds", KERNEL=="lm3643:ir:flood", RUN+="/usr/bin/chgrp video /sys%p/brightness", RUN+="/usr/bin/chmod g+w /sys%p/brightness"
